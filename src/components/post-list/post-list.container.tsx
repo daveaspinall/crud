@@ -1,13 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { getPosts } from "@/api";
-
+import { usePosts } from "@/hooks/use-posts";
 import { PostList } from "./post-list";
 
 export const PostListContainer = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["posts"],
-    queryFn: () => getPosts(0, 100),
-  });
+  const { getPostsQuery } = usePosts();
+  const { data, isLoading } = getPostsQuery();
 
   if (isLoading) {
     return <p>Loading posts...</p>;

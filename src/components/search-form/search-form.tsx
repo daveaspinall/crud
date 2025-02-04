@@ -1,18 +1,17 @@
-import { filterPostsByTitle } from "@/api";
-import { queryClient } from "@/lib/query-client";
-import { useMutation } from "@tanstack/react-query";
-import { FieldValues, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { usePosts } from "@/hooks/use-posts";
 
 export const SearchForm = () => {
   const { register, handleSubmit, getValues } = useForm();
 
-  const { mutate } = useMutation({
-    mutationFn: (values: FieldValues) => filterPostsByTitle(values.query),
-    onSuccess: (data) => queryClient.setQueryData(["posts"], data),
-  });
+  const { filterPostsMutation } = usePosts();
+  const { mutate } = filterPostsMutation();
 
   return (
-    <form onSubmit={handleSubmit((values) => mutate(values))}>
+    <form
+      onSubmit={handleSubmit((values) => mutate(values))}
+      data-testid="search-form"
+    >
       <label htmlFor="query">Search</label>
       <input
         id="query"
