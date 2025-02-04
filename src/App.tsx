@@ -1,13 +1,14 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 
-import { PostListContainer } from "./components/post-list/post-list.container";
-
-const queryClient = new QueryClient();
+import { PostContainer } from "./components/post-container/post-container";
+import { SearchForm } from "./components/search-form/search-form";
+import { queryClient } from "./lib/query-client";
 
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <PostListContainer />
+      <SearchForm />
+      <PostContainer />
     </QueryClientProvider>
   );
 };

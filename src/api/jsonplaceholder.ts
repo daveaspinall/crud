@@ -6,3 +6,10 @@ export const getPosts = async (start = 0, end = 10) => {
   );
   return await response.json();
 };
+
+export const filterPostsByTitle = async (title: string) => {
+  const response = await fetch(
+    `${JSONPLACEHOLDER_URL}/posts?title_like=${title}`,
+  );
+  return await response.json();
+};
