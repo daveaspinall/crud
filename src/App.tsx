@@ -1,9 +1,15 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import { PostListContainer } from "./components/post-list/post-list.container";
+
+const queryClient = new QueryClient();
+
 const App = () => {
   return (
-      <div>
-          <h1>Hello Twinkl!</h1>
-      </div>
-  )
-}
+    <QueryClientProvider client={queryClient}>
+      <PostListContainer />
+    </QueryClientProvider>
+  );
+};
 
 export default App;
