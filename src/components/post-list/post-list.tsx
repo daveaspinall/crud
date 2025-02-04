@@ -1,16 +1,14 @@
-import { Post } from "@/api";
+import { Post as PostType } from "@/api";
+import { Post } from "../post/post";
 
 interface PostListProps {
-  posts: Post[];
+  posts: PostType[];
 }
 
 export const PostList = ({ posts }: PostListProps) => (
   <section>
     {posts.map((post) => (
-      <article key={post.id}>
-        <h2>{post.title}</h2>
-        <p>{post.body}</p>
-      </article>
+      <Post key={post.id} post={post} />
     ))}
   </section>
 );
