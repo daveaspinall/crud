@@ -7,9 +7,9 @@ export const fetchPosts = async (start = 0, end = 10) => {
   return await response.json();
 };
 
-export const filterPostsByTitle = async (title: string) => {
+export const filterPostsByTitle = async (query: string) => {
   const response = await fetch(
-    `${JSONPLACEHOLDER_URL}/posts?title_like=${title}`,
+    `${JSONPLACEHOLDER_URL}/posts?title_like=${query}`,
   );
   return await response.json();
 };
