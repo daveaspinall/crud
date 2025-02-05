@@ -27,7 +27,7 @@ https://jsonplaceholder.typicode.com/guide/
 
 ##### Testing
 
-- Write sufficient tests to satisfy a production-ready application. - [ ]
+- Write sufficient tests to satisfy a production-ready application. - [x]
 
 ##### Documentation
 

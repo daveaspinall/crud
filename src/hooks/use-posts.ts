@@ -4,7 +4,7 @@ import { FieldValues } from "react-hook-form";
 import { queryClient } from "@/lib/query-client";
 import { deletePost, fetchPosts, filterPostsByTitle, PostType } from "@/api";
 
-const removePostFromData = (id: number, queryClient: QueryClient) => {
+export const removePostFromData = (id: number, queryClient: QueryClient) => {
   const data: PostType[] = queryClient.getQueryData(["posts"]) || [];
   const updatedData = data.filter((item) => item.id !== id);
 
