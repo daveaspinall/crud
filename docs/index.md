@@ -25,6 +25,8 @@ I really enjoyed this task, and it had a few possible directions to take in the 
 
 3. **Coverage**: I've added a coverage command `yarn coverage` to inform what areas of the code are missing tests. Some page-level components are missing coverage, but again, the functionality is covered lower down in the atoms/molecules/organisms. I'd usually aim for around 80% coverage, as a higher percentage can lead to tests that provide no value other than to increase the score (e.g. "it renders" tests).
 
+4. **Skeleton components**: I'd have really liked to use skeleton loading components to improve the page render times and to improve the overall experience but I just didn't have time.
+
 ## 🛠️ Technologies Used
 
 I tried to keep the technologies used to a minimum, and to only introduce a framework (such as `react-query`) when I deemed it necessary, i.e. the benefits they bring outweigh the potential maintenance tradeoffs later down the line.
