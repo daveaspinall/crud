@@ -10,8 +10,8 @@ interface PostListProps {
 export const PostList = ({ posts }: PostListProps) => (
   <ul className={styles.list} aria-label="List of posts">
     {posts.map((post) => (
-      <li className={styles.item}>
-        <PostContainer key={post.id} post={post} />
+      <li className={styles.item} key={post.id}>
+        <PostContainer post={post} />
       </li>
     ))}
   </ul>
