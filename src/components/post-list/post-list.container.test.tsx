@@ -2,10 +2,10 @@ import { render, screen } from "@testing-library/react";
 
 import { PostListContainer } from "./post-list.container";
 import { postBuilder } from "@/utils/testing/mock-builder";
+import { PostType } from "@/api";
 
-const mockPosts = postBuilder.buildList(10);
-
-let isLoading = false;
+let mockPosts: PostType[];
+let isLoading: boolean;
 
 vi.mock("@tanstack/react-query", async () => {
   const originalModule = await vi.importActual("@tanstack/react-query");
@@ -25,6 +25,9 @@ vi.mock("@tanstack/react-query", async () => {
 describe("PostListContainer component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+
+    mockPosts = postBuilder.buildList(10);
+    isLoading = false;
   });
 
   it("should fetch posts on render", async () => {
@@ -39,5 +42,13 @@ describe("PostListContainer component", () => {
     render(<PostListContainer />);
 
     expect(await screen.findByText("Loading posts...")).toBeInTheDocument();
+  });
+
+  it(`should display "can't find any posts..." when no posts are returned in the data`, async () => {
+    mockPosts = [];
+
+    render(<PostListContainer />);
+
+    expect(await screen.findByText("Can't find any posts")).toBeInTheDocument();
   });
 });

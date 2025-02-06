@@ -1,0 +1,17 @@
+.error {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-top: 82px;
+}
+
+.emoji {
+  font-size: 200px;
+}
+
+.title {
+  margin-bottom: var(--spacing-l);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
