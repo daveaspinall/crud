@@ -43,10 +43,10 @@
     path {
       fill: currentColor;
       transition: fill 0.3s ease-out;
-
-      button:hover & {
-        fill: var(--border-active);
-      }
     }
+  }
+
+  &:hover svg path {
+    fill: var(--border-active);
   }
 }

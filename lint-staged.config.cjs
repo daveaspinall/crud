@@ -1,4 +1,4 @@
 module.exports = {
   "src/**/*.{ts,tsx,js,jsx}": ["lint:fix"],
-  "!(*.svg)": ["format"],
+  "*": ["prettier --write --ignore-unknown"],
 };

@@ -16,6 +16,7 @@ node_modules
 
 # Generated
 coverage
+dist
 
 # Editors and miscellaneous
 .eslintcache
