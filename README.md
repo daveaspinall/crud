@@ -1,4 +1,4 @@
-# Twinkl React Tech Test
+# React Tech Test
 
 ## Task description
 
