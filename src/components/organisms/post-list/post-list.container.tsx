@@ -1,5 +1,5 @@
 import { usePosts } from "@/hooks/use-posts";
-import { Error } from "@/components/error/error";
+import { Error } from "@/components/atoms/error/error";
 import { PostList } from "./post-list";
 
 export const PostListContainer = () => {

@@ -1,5 +1,5 @@
 import { PostType } from "@/api";
-import { PostContainer } from "@/components/post/post.container";
+import { PostContainer } from "@/components/molecules/post/post.container";
 
 import * as styles from "./post-list.module.css";
 

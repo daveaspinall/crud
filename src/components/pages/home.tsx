@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
-import { SearchForm } from "@/components/search-form/search-form";
-import { PostListContainer } from "@/components/post-list/post-list.container";
+import { SearchForm } from "@/components/organisms/search-form/search-form";
+import { PostListContainer } from "@/components/organisms/post-list/post-list.container";
 
 import * as styles from "./home.module.css";
 

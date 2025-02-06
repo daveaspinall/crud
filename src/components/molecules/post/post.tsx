@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { PostType } from "@/api";
-import { Button } from "@/components/button/button";
+import { Button } from "@/components/atoms/button/button";
 
 import Delete from "./delete.svg?react";
 import * as styles from "./post.module.css";

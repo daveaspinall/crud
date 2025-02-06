@@ -19,7 +19,7 @@ describe("removePostFromData", () => {
 
     removePostFromData(
       postIdBeingDeleted,
-      mockQueryClient as any as QueryClient,
+      mockQueryClient as unknown as QueryClient,
     );
 
     expect(mockSetQueryData).toHaveBeenCalledWith(["posts"], expectedData);
