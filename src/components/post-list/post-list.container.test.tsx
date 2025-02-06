@@ -6,6 +6,8 @@ import { PostType } from "@/api";
 
 let mockPosts: PostType[];
 let isLoading: boolean;
+let isError: boolean;
+let isLoadingError: boolean;
 
 vi.mock("@tanstack/react-query", async () => {
   const originalModule = await vi.importActual("@tanstack/react-query");
@@ -15,6 +17,8 @@ vi.mock("@tanstack/react-query", async () => {
     useQuery: () => ({
       data: mockPosts,
       isLoading,
+      isError,
+      isLoadingError,
     }),
     useMutation: () => ({
       mutate: vi.fn(),
@@ -28,6 +32,8 @@ describe("PostListContainer component", () => {
 
     mockPosts = postBuilder.buildList(10);
     isLoading = false;
+    isError = false;
+    isLoadingError = false;
   });
 
   it("should fetch posts on render", async () => {
@@ -50,5 +56,14 @@ describe("PostListContainer component", () => {
     render(<PostListContainer />);
 
     expect(await screen.findByText("Can't find any posts")).toBeInTheDocument();
+  });
+
+  it(`should display "we've hit a problem..." when there is an issue fetching the data`, async () => {
+    isError = true;
+    isLoadingError = true;
+
+    render(<PostListContainer />);
+
+    expect(await screen.findByText("We've hit a problem")).toBeInTheDocument();
   });
 });
