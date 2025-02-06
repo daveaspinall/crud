@@ -31,7 +31,7 @@ https://jsonplaceholder.typicode.com/guide/
 
 ##### Documentation
 
-- Add appropriate documentation for your application. - [ ]
+- Add appropriate documentation for your application. - [x]
 
 #### Wireframes
 
