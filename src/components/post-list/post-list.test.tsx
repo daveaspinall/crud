@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 
+import { MockIntersectionObserver, postBuilder } from "@/utils/testing";
 import { PostList } from "./post-list";
-import { postBuilder } from "@/utils/testing/mock-builder";
 
 vi.mock("@tanstack/react-query", async () => {
   const originalModule = await vi.importActual("@tanstack/react-query");
@@ -15,6 +15,10 @@ vi.mock("@tanstack/react-query", async () => {
 });
 
 describe("PostList component", () => {
+  beforeEach(() => {
+    vi.stubGlobal(`IntersectionObserver`, MockIntersectionObserver);
+  });
+
   afterEach(() => {
     vi.clearAllMocks();
   });

@@ -1,10 +1,14 @@
-import { postBuilder } from "@/utils/testing/mock-builder";
+import { postBuilder, MockIntersectionObserver } from "@/utils/testing";
 import { render, screen } from "@testing-library/react";
 import { Post } from "./post";
 
 describe("Post component", () => {
   const mockPost = postBuilder.build();
   const mockHandleClick = vi.fn();
+
+  beforeEach(() => {
+    vi.stubGlobal(`IntersectionObserver`, MockIntersectionObserver);
+  });
 
   it("should render the post correctly", () => {
     render(<Post post={mockPost} handleClick={mockHandleClick} />);

@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 
-import { PostListContainer } from "./post-list.container";
-import { postBuilder } from "@/utils/testing/mock-builder";
 import { PostType } from "@/api";
+import { postBuilder, MockIntersectionObserver } from "@/utils/testing";
+import { PostListContainer } from "./post-list.container";
 
 let mockPosts: PostType[];
 let isLoading: boolean;
@@ -29,6 +29,8 @@ vi.mock("@tanstack/react-query", async () => {
 describe("PostListContainer component", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+
+    vi.stubGlobal(`IntersectionObserver`, MockIntersectionObserver);
 
     mockPosts = postBuilder.buildList(10);
     isLoading = false;

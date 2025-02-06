@@ -16,7 +16,7 @@
 .input {
   padding-left: 56px;
   padding-right: var(--spacing-l);
-  width: 100%;
+  width: 80%;
   height: 56px;
   color: #fff;
   border-radius: 56px;
@@ -37,6 +37,7 @@
   }
 
   &:focus {
+    width: 100%;
     color: var(--border-active);
   }
 

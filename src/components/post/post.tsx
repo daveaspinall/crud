@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { PostType } from "@/api";
 import { Button } from "@/components/button/button";
 
@@ -9,8 +10,19 @@ interface PostProps {
   handleClick: () => void;
 }
 
+const motionProps = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.3 },
+  viewport: { once: true },
+};
+
 export const Post = ({ post, handleClick }: PostProps) => (
-  <article className={styles.post} aria-labelledby={`post-${post.id}-heading`}>
+  <motion.article
+    className={styles.post}
+    aria-labelledby={`post-${post.id}-heading`}
+    {...motionProps}
+  >
     <div className={styles.body}>
       <h2 id={`post-${post.id}-heading`} className={styles.title}>
         {post.title}
@@ -20,5 +32,5 @@ export const Post = ({ post, handleClick }: PostProps) => (
     <Button className={styles.button} onClick={handleClick}>
       <Delete aria-hidden /> <span aria-label="Remove this post">Remove</span>
     </Button>
-  </article>
+  </motion.article>
 );
