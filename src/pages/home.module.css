@@ -1,0 +1,17 @@
+.row {
+  padding-inline: var(--spacing-l);
+}
+
+.header {
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-l);
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--spacing-xl);
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 1024px;
+}

@@ -1,0 +1,40 @@
+@import "node_modules/modern-normalize/modern-normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+:root {
+  --bg-body: #202124;
+  --bg-post: #28292a;
+
+  --border-active: #8ab4f8;
+
+  --gutters: 20px;
+
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 48px;
+}
+
+body {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  background: var(--bg-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}

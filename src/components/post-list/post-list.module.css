@@ -1,0 +1,18 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: var(--spacing-l);
+  transition: margin 0.3s ease;
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

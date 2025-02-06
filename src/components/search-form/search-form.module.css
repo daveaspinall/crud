@@ -1,0 +1,61 @@
+.form {
+  position: relative;
+}
+
+.legend,
+.label {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.input {
+  padding-left: 56px;
+  padding-right: var(--spacing-l);
+  width: 100%;
+  height: 56px;
+  color: #fff;
+  border-radius: 56px;
+  border: 2px solid transparent;
+  background-color: #262930;
+  outline: none;
+
+  &::placeholder {
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &:-webkit-autofill {
+    background: transparent !important;
+    -webkit-box-shadow: 0 0 0 50px #262930 inset;
+    -webkit-text-fill-color: #fff;
+  }
+
+  &:focus {
+    color: var(--border-active);
+  }
+
+  &:focus-visible {
+    border-color: var(--border-active);
+    background: rgba(138, 180, 248, 0.12);
+  }
+
+  &:active {
+    border-color: transparent;
+    background: rgba(138, 180, 248, 0.1);
+  }
+}
+
+.icon {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+}
