@@ -1,10 +1,10 @@
-import * as styles from "./error.module.css";
+import * as styles from "./emoji.module.css";
 
-interface ErrorProps {
+interface EmojiProps {
   variant: "posts" | "network";
 }
 
-export const Error = ({ variant = "posts" }: ErrorProps) => (
+export const Emoji = ({ variant = "posts" }: EmojiProps) => (
   <div className={styles.error}>
     {variant === "posts" ? (
       <>

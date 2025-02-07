@@ -1,5 +1,5 @@
-import { usePosts } from "@/hooks/use-posts";
-import { Error } from "@/components/atoms/error/error";
+import { usePosts } from "@/hooks/use-posts/use-posts";
+import { Emoji } from "@/components/atoms/emoji/emoji";
 import { PostList } from "./post-list";
 
 export const PostListContainer = () => {
@@ -11,11 +11,11 @@ export const PostListContainer = () => {
   }
 
   if (isError || isLoadingError) {
-    return <Error variant="network" />;
+    return <Emoji variant="network" />;
   }
 
   if (data?.length === 0) {
-    return <Error variant="posts" />;
+    return <Emoji variant="posts" />;
   }
 
   return <PostList posts={data} />;
