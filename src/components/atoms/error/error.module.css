@@ -1,0 +1,10 @@
+.error {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-block: var(--spacing-l);
+  padding-inline: var(--spacing-l);
+  height: 58px;
+  background: var(--bg-error);
+  border-radius: 58px;
+}
